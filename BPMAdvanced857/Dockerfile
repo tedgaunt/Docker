@@ -3,6 +3,12 @@
 #
 # To rebuild this image, you will need to obtain and place the 3 installation files from IBM into same directory
 # as the Dockerfile:  BPM_Adv_V857_Linux_x86_1_of_3.tar.gz, BPM_Adv_V857_Linux_x86_2_of_3.tar.gz, and BPM_Adv_V857_Linux_x86_3_of_3.tar.gz
+#
+# because BPM is rather large, make sure that your docker vm is large enough.  create using something like:
+# docker-machine create -d virtualbox --virtualbox-disk-size 90000 -virtualbox-memory 5000 --virtualbox-cpu-count 4 default
+#
+# open a command with the container, and you'll be root.  use "su - wasadmin" before doing anything with WAS/BPM, as that is the owning user.
+# future fixpacks and updates should use /home/wasadmin/IBM/InstallationManager/eclipse/tools/imcl
 
 FROM centos:centos7
 
